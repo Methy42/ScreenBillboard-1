@@ -51,7 +51,7 @@ export class ThreeExample {
         this.orbitControls.enableDamping = true;
 
         // const threeMFViewer = new ThreeMFViewer("/jsm/FactoryAssembly-1210-small.3MF");
-        const glbViewer = new GLBViewer("/jsm/BiomassFactory.glb");
+        const glbViewer = new GLBViewer("jsm/BiomassFactory.glb");
         // threeMFViewer.addEventListener("init", () => {
         //     this.model = threeMFViewer.model;
 
