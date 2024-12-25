@@ -22,6 +22,7 @@ const dataUrlLoader: Plugin = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/ScreenBillboard-1/',
   plugins: [dataUrlLoader, vue()],
   css:{
     postcss:{
