@@ -7,9 +7,9 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 // import { FactoryAssemblySmallStl } from './objects/FactoryAssemblySmallStl';
 // import { FactoryAssemblySmallPly } from './objects/FactoryAssemblySmallPly';
 // import { FbxViewer } from './objects/FbxViewer';
-import { ThreeMFViewer } from './objects/3MFViewer';
+// import { ThreeMFViewer } from './objects/3MFViewer';
 // import { MillGltf } from './objects/MillGltf';
-// import { GLBViewer } from './objects/GLBViewer';
+import { GLBViewer } from './objects/GLBViewer';
 
 export interface IThreeExampleOption {
     canvas: HTMLCanvasElement
@@ -51,7 +51,7 @@ export class ThreeExample {
         this.orbitControls.enableDamping = true;
 
         // const threeMFViewer = new ThreeMFViewer("/jsm/FactoryAssembly-1210-small.3MF");
-        // const glbViewer = new GLBViewer("/jsm/BiomassFactory.glb");
+        const glbViewer = new GLBViewer("/jsm/BiomassFactory.glb");
         // threeMFViewer.addEventListener("init", () => {
         //     this.model = threeMFViewer.model;
 
@@ -69,32 +69,32 @@ export class ThreeExample {
         //     }
         // });
 
-        // glbViewer.addEventListener("init", () => {
-        //     this.model = glbViewer.model;
+        glbViewer.addEventListener("init", () => {
+            this.model = glbViewer.model;
 
-        //     console.log(this.model);
+            console.log(this.model);
 
 
-        //     if (this.model) {
-        //         this.model.scale.set(0.1, 0.1, 0.1);
+            if (this.model) {
+                this.model.scale.set(0.1, 0.1, 0.1);
 
-        //         this.scene.add(this.model);
+                this.scene.add(this.model);
 
-        //         (window as any).thisModel = this.model;
-        //         this.model.position.set(-10, 0, -1.5);
-        //         (async () => {
-        //             for (const item of (this as any).model.children) {
-        //                 item.material && item.name != "Mesh166" && (item.material.wireframe = true);
-        //                 item.material && item.name != "Mesh166" && (item.material.color.set(0.06, 0.5, 0.8));
-        //                 if (item.name === "Mesh") {
-        //                     item.visible = false;
-        //                 }
-        //             }
-        //         })();
+                (window as any).thisModel = this.model;
+                this.model.position.set(-10, 0, -1.5);
+                (async () => {
+                    for (const item of (this as any).model.children) {
+                        item.material && item.name != "Mesh166" && (item.material.wireframe = true);
+                        item.material && item.name != "Mesh166" && (item.material.color.set(0.06, 0.5, 0.8));
+                        if (item.name === "Mesh") {
+                            item.visible = false;
+                        }
+                    }
+                })();
 
-        //         this.animate();
-        //     }
-        // });
+                this.animate();
+            }
+        });
 
         // const millGltf = new MillGltf();
         // millGltf.addEventListener('init', () => {
