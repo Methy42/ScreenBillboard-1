@@ -144,6 +144,8 @@ onMounted(() => {
   // createWebSocketConnection();
 })
 
+console.log(threeExample);
+
 // 在组件卸载前关闭 WebSocket 连接
 // onBeforeUnmount(() => {
 //   if (ws) {

@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+// import * as THREE from 'three';
 
 import { ThreeMFLoader } from 'three/addons/loaders/3MFLoader.js';
 

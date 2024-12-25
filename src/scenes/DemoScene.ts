@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { DRACOLoader, GLTFLoader, OrbitControls } from 'three/examples/jsm/Addons.js';
+import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
 export class DemoScene {
     constructor () {

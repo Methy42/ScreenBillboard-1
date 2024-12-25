@@ -126,7 +126,7 @@ const initChart = () => {
         },
         series: [{
             type: 'custom',
-            renderItem: function (params: any, api: any) {
+            renderItem: function (_: any, api: any) {
                 const location = api.coord([api.value(0), api.value(1)])
                 return {
                     type: 'group',
@@ -175,7 +175,7 @@ const initChart = () => {
             data: MAX
         }, {
             type: 'custom',
-            renderItem: (params: any, api: any) => {
+            renderItem: (_: any, api: any) => {
                 const location = api.coord([api.value(0), api.value(1)])
                 return {
                     type: 'group',
