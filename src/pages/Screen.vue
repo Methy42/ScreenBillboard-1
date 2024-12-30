@@ -2,24 +2,11 @@
     <div class="container" :style="{ height: `${screenHeight}px`,backgroundImage: `url(${ ScreenBackground })` }">
         <ThreeDemo class="three-demo" />
         <ScreenHeader class="screen-header" />
-        <ScreenPanel class="screen-panel-1" :title="'多种图形展示样式'">
-            <ScreenChart1 />
-        </ScreenPanel>
-        <ScreenPanel class="screen-panel-2" :title="'饼状图展示样式'">
-            <ScreenChart2 />
-        </ScreenPanel>
-        <ScreenPanel class="screen-panel-3" :title="'柱状图展示样式'">
-            <ScreenChart3 />
-        </ScreenPanel>
-        <ScreenPanel class="screen-panel-4" :title="'本周完成情况汇总'">
-            <ScreenChart4 />
-        </ScreenPanel>
-        <ScreenPanel class="screen-panel-5" :title="'柱状图展示样式'">
-            <ScreenChart5 />
-        </ScreenPanel>
-        <ScreenPanel class="screen-panel-6" :title="'柱状图展示样式'">
-            <ScreenChart6 />
-        </ScreenPanel>
+        <RobotInfoCard class="robot-info-card" />
+        <PlanInfoCard class="plan-info-card" />
+        <VacuumFurnaceInfoCard class="vacuum-furnace-info-card" />
+        <PreheatingFurnaceInfoCard class="preheating-furnace-info-card" />
+        <InsulationWarehouseInfoCard class="insulation-warehouse-info-card" />
     </div>
 </template>
 <script setup lang="ts">
@@ -29,14 +16,11 @@ import { Store } from '../Store';
 import ThreeDemo from './ThreeDemo.vue';
 
 import ScreenHeader from '../components/ScreenHeader.vue';
-import ScreenPanel from '../components/ScreenPanel.vue';
-
-import ScreenChart1 from '../charts/ScreenChart1.vue';
-import ScreenChart2 from '../charts/ScreenChart2.vue';
-import ScreenChart3 from '../charts/ScreenChart3.vue';
-import ScreenChart4 from '../charts/ScreenChart4.vue';
-import ScreenChart5 from '../charts/ScreenChart5.vue';
-import ScreenChart6 from '../charts/ScreenChart6.vue';
+import RobotInfoCard from '../components/RobotInfoCard.vue';
+import PlanInfoCard from '../components/PlanInfoCard.vue';
+import VacuumFurnaceInfoCard from '../components/VacuumFurnaceInfoCard.vue';
+import PreheatingFurnaceInfoCard from '../components/PreheatingFurnaceInfoCard.vue';
+import InsulationWarehouseInfoCard from '../components/InsulationWarehouseInfoCard.vue';
 
 const ScreenBackground = Store.assetsMap.ScreenBackground.src;
 const screenHeight = ref<number>(window.innerWidth * 1080 / 1920);
@@ -78,39 +62,33 @@ const onWindowResize = () => {
     transform: translateX(-50%);
 }
 
-.screen-panel-1 {
+.robot-info-card {
     position: absolute;
-    top: 92px;
-    left: 15px;
+    top: 95px;
+    left: 12px;
 }
 
-.screen-panel-2 {
+.plan-info-card {
     position: absolute;
-    top: 422px;
-    left: 15px;
+    top: 95px;
+    left: 372px;
 }
 
-.screen-panel-3 {
+.vacuum-furnace-info-card {
     position: absolute;
-    top: 752px;
-    left: 15px;
+    top: 233px;
+    left: 12px;
 }
 
-.screen-panel-4 {
+.preheating-furnace-info-card {
     position: absolute;
-    top: 92px;
-    right: 15px;
+    top: 290px;
+    left: 12px;
 }
 
-.screen-panel-5 {
+.insulation-warehouse-info-card {
     position: absolute;
-    top: 422px;
-    right: 15px;
-}
-
-.screen-panel-6 {
-    position: absolute;
-    top: 752px;
-    right: 15px;
+    top: 786px;
+    left: 12px;
 }
 </style>
