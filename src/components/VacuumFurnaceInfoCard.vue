@@ -1,14 +1,14 @@
 <template>
     <div class="card-container" :style="{ backgroundImage: `url(${ VacuumFurnaceBg })` }">
         <div class="current-label">真空炉当前产品</div>
-        <div class="current-value">XXXXXXXXXX</div>
+        <div class="current-value">{{ Store.appData.vacuumFurnaceCurrentProduct }}</div>
         <div class="divider"></div>
         <div class="time-label">真空炉已熔炼时间</div>
-        <div class="time-value">40min</div>
+        <div class="time-value">{{ Store.appData.vacuumFurnaceMeltingTime }}min</div>
     </div>
 </template>
 <script lang="ts" setup>
-import { Store } from '../Store';
+import { Store } from '../store/index';
 
 const VacuumFurnaceBg = Store.assetsMap.VacuumFurnaceBg.src;
 </script>

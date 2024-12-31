@@ -5,11 +5,13 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Store } from './Store';
+import { Store } from './store/index';
 import Loading from './components/Loading.vue';
 import Screen from './pages/Screen.vue';
 
 const isLoading = ref(true);
+
+(window as any).Store = Store;
 
 const loadAssets = async () => {
     for (const assets of Object.values(Store.assetsMap)) {

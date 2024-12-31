@@ -11,7 +11,7 @@
 </template>
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
-import { Store } from '../Store';
+import { Store } from '../store/index';
 
 import ThreeDemo from './ThreeDemo.vue';
 

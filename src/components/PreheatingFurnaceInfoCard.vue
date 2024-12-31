@@ -18,23 +18,13 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { Store } from '../Store';
+import { Store } from '../store/index';
 
 const PreheatingFurnaceTitle = Store.assetsMap.PreheatingFurnaceTitle.src;
 const PreheatingFurnaceBg = Store.assetsMap.PreheatingFurnaceBg.src;
 const ListBg = Store.assetsMap.ListBg.src;
 
-const listData = ref<{ temperature: string; product: string; roastedTime: string; }[]>([]);
-
-for (let i = 0; i < 12; i++) {
-    listData.value.push({
-        temperature: (30 + i) + '℃',
-        product: 'XXXXXXXXXX',
-        roastedTime: (20 + i) + 'min'
-    });
-}
-
+const listData = Store.appData.preheatingFurnaceList;
 </script>
 <style scoped>
 .card-container {

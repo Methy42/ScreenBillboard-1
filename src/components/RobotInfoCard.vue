@@ -3,20 +3,20 @@
         <div class="mode-container" :style="{ backgroundImage: `url(${ OperatingModeBg })` }">
             <div class="label">机器人运行模式</div>
             <div class="message-box">
-                <div class="text">在线</div>
+                <div class="text">{{ Store.appData.robotOperationMode }}</div>
             </div>
         </div>
         <div class="interface-icon" :style="{ backgroundImage: `url(${ OperatingModeIcon })` }"></div>
         <div class="status-container" :style="{ backgroundImage: `url(${ OperatingModeBg })` }">
             <div class="label">机器人状态</div>
             <div class="message-box">
-                <div class="text">运行中</div>
+                <div class="text">{{ Store.appData.robotStatus }}</div>
             </div>
         </div>
     </div>
 </template>
 <script lang="ts" setup>
-import { Store } from '../Store';
+import { Store } from '../store/index';
 
 const StateBg = Store.assetsMap.StateBg.src;
 const OperatingModeBg = Store.assetsMap.OperatingModeBg.src;

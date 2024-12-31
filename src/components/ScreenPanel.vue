@@ -10,7 +10,7 @@
 </template>
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import { Store } from '../Store';
+import { Store } from '../store/index';
 
 const ScreenPanelBoxBackground = Store.assetsMap.ScreenPanelBoxBackground.src;
 const ScreenPanelTitleBackground = Store.assetsMap.ScreenPanelTitleBackground.src;

@@ -2,19 +2,19 @@
     <div class="card-container" :style="{ backgroundImage: `url(${ PlanBg })` }">
         <div class="plan-icon-1" :style="{ backgroundImage: `url(${ PlanIcon1 })` }"></div>
         <div class="plan-count-label">计划数量</div>
-        <div class="plan-count-value">1002</div>
+        <div class="plan-count-value">{{ Store.appData.planCount }}</div>
         <div class="plan-count-unit">件</div>
         <div class="plan-icon-2" :style="{ backgroundImage: `url(${ PlanIcon2 })` }"></div>
         <div class="complete-count-label">完成数量</div>
-        <div class="complete-count-value">932</div>
+        <div class="complete-count-value">{{ Store.appData.completeCount }}</div>
         <div class="complete-count-unit">件</div>
         <div class="plan-icon-3" :style="{ backgroundImage: `url(${ PlanIcon3 })` }"></div>
         <div class="loss-count-label">报废数量</div>
-        <div class="loss-count-value">24</div>
+        <div class="loss-count-value">{{ Store.appData.lossCount }}</div>
     </div>
 </template>
 <script lang="ts" setup>
-import { Store } from '../Store';
+import { Store } from '../store/index';
 
 const PlanBg = Store.assetsMap.PlanBg.src;
 const PlanIcon1 = Store.assetsMap.PlanIcon1.src;

@@ -8,7 +8,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { Store } from '../Store';
+import { Store } from '../store/index';
 const ScreenHeaderBackground = Store.assetsMap.ScreenHeaderBackground.src;
 </script>
 <style scoped>
